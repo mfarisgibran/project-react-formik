@@ -11,21 +11,30 @@ export default function App() {
         initialValues={{
           name: '',
           email: '',
+          phone: '',
         }}
         onSubmit={(values) => {
           setForm(values)
         }}
       >
         <Form>
-          <Field type="text" name="name" />
-          <Field type="email" name="email" />
-          <button type="submit">Submit</button>
+          <div>
+            <Field type="text" name="name" placeholder="Your name" />
+          </div>
+          <div>
+            <Field type="email" name="email" placeholder="Your email address" />
+          </div>
+          <div>
+            <Field type="tel" name="phone" placeholder="Your phone number" />
+          </div>
+          <input type="submit" value="Submit" />
         </Form>
       </Formik>
       <div>
         <ul>
           <li>Name: {form.name}</li>
           <li>Email: {form.email}</li>
+          <li>Phone: {form.phone}</li>
         </ul>
       </div>
     </div>
